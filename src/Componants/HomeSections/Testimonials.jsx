@@ -3,7 +3,7 @@ import React from 'react';
 const Testimonials = () => {
     return (
       <div>
-        <section className="py-16 bg-gray-100">
+        <section className="py-10 bg-gray-100">
           <div className="container mx-auto px-4">
             <p className="text-center text-xs pt-5">
               --- Our Customers Testimonials ---

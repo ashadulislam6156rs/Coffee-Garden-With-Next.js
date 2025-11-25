@@ -45,7 +45,13 @@ const Navbar = () => {
                 <Link href={"/"}>Home</Link>
               </li>
               <li>
+                <Link href={"/allproduct"}>All Products</Link>
+              </li>
+              <li>
                 <Link href={"/about"}>About</Link>
+              </li>
+              <li>
+                <Link href={"/contact"}>Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -63,13 +69,19 @@ const Navbar = () => {
               <Link href={"/"}>Home</Link>
             </li>
             <li>
+              <Link href={"/allproduct"}>All Products</Link>
+            </li>
+            <li>
               <Link href={"/about"}>About</Link>
+            </li>
+            <li>
+              <Link href={"/contact"}>Contact Us</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end flex gap-2">
           {user ? (
-           <Deshboard></Deshboard>
+            <Deshboard></Deshboard>
           ) : (
             <Link className="btn btn-md text-base" href={"/login"}>
               LogIn

@@ -99,7 +99,7 @@ const Product = ({ product, setCurrProducts, currProducts }) => {
         </div>
         <div className="flex flex-col gap-2 absolute z-100 right-5">
           <Link
-            href="/"
+            href={`/allproduct/${_id}`}
             title="View Details"
             className="btn btn-square bg-[#D2B48C] text-white w-fit h-fit p-2"
           >
