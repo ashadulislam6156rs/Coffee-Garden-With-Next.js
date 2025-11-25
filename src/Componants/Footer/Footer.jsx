@@ -14,7 +14,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto bg-[#37272719]">
       <footer className="py-16 px-10">
         <div className=" grid md:grid-cols-2 gap-12">
           {/* ---------- Left Section ---------- */}
@@ -26,10 +26,10 @@ const Footer = () => {
               width={60}
               height={60}
               className="md:w-14 w-10"
-                      />
+            />
 
             <h2 className="text-3xl font-bold font-serif text-[#3c2f2f]">
-              Espresso Emporium
+              CoffeeGarden
             </h2>
 
             <p className="mt-4 text-gray-700 leading-relaxed">
