@@ -11,10 +11,7 @@ import Swal from "sweetalert2";
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
 
-  const {
-    register,
-    handleSubmit,
-  } = useForm();
+  const { register, handleSubmit, formState: {errors} } = useForm();
 
   const handleAddNewCoffee = (data) => {
     const newCoffee = {
@@ -24,7 +21,7 @@ const AddProduct = () => {
       userPhoto: user?.photoURL,
     };
 
-    fetch(`http://localhost:5000/coffees`, {
+    fetch(`https://coffee-garden-server.vercel.app/coffees`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -93,6 +90,9 @@ const AddProduct = () => {
                       placeholder="Enter Product Title"
                       {...register("name", { required: true })}
                     />
+                    {errors.name?.type === "required" && (
+                      <p className="text-red-500">Name is required!</p>
+                    )}
                   </fieldset>
                   <fieldset className="fieldset w-full">
                     <legend className="fieldset-legend">
@@ -106,6 +106,9 @@ const AddProduct = () => {
                       {...register("chef", { required: true })}
                       className="input w-full focus:outline-0 border-teal-500"
                     />
+                    {errors.chef?.type === "required" && (
+                      <p className="text-red-500">Chef is required!</p>
+                    )}
                   </fieldset>
                 </div>
 
@@ -123,6 +126,9 @@ const AddProduct = () => {
                       placeholder="Enter Supplier Name"
                       {...register("supplier", { required: true })}
                     />
+                    {errors.supplier?.type === "required" && (
+                      <p className="text-red-500">Supplier is required!</p>
+                    )}
                   </fieldset>
                   <fieldset className="fieldset w-full">
                     <legend className="fieldset-legend">
@@ -136,6 +142,9 @@ const AddProduct = () => {
                       placeholder="Enter Taste"
                       {...register("taste", { required: true })}
                     />
+                    {errors.taste?.type === "required" && (
+                      <p className="text-red-500">Taste is required!</p>
+                    )}
                   </fieldset>
                 </div>
                 <div className="flex gap-5">
@@ -152,6 +161,9 @@ const AddProduct = () => {
                       placeholder="Enter Product Category"
                       {...register("category", { required: true })}
                     />
+                    {errors.category?.type === "required" && (
+                      <p className="text-red-500">Category is required!</p>
+                    )}
                   </fieldset>
                   <fieldset className="fieldset w-full">
                     <legend className="fieldset-legend">
@@ -165,6 +177,11 @@ const AddProduct = () => {
                       name="available"
                       {...register("available", { required: true })}
                     />
+                    {errors.available?.type === "required" && (
+                      <p className="text-red-500">
+                        Status available is required!
+                      </p>
+                    )}
                   </fieldset>
                 </div>
                 <div className="flex gap-5">
@@ -182,6 +199,9 @@ const AddProduct = () => {
                       placeholder="Enter Product Price"
                       {...register("price", { required: true })}
                     />
+                    {errors.price?.type === "required" && (
+                      <p className="text-red-500">Price is required!</p>
+                    )}
                   </fieldset>
                   <fieldset className="fieldset w-full">
                     <legend className="fieldset-legend">
@@ -196,6 +216,9 @@ const AddProduct = () => {
                       placeholder="Enter Product Rating"
                       {...register("rating", { required: true })}
                     />
+                    {errors.rating?.type === "required" && (
+                      <p className="text-red-500">Rating is required!</p>
+                    )}
                   </fieldset>
                 </div>
                 <fieldset className="fieldset w-full">
@@ -210,6 +233,9 @@ const AddProduct = () => {
                     placeholder="Enter Product Details"
                     {...register("details", { required: true })}
                   />
+                  {errors.details?.type === "required" && (
+                    <p className="text-red-500">Details is required!</p>
+                  )}
                 </fieldset>
                 <fieldset className="fieldset w-full">
                   <legend className="fieldset-legend">
@@ -223,6 +249,9 @@ const AddProduct = () => {
                     placeholder="Enter Product Photo URL"
                     {...register("image", { required: true })}
                   />
+                  {errors.image?.type === "required" && (
+                    <p className="text-red-500">Image URL is required!</p>
+                  )}
                 </fieldset>
 
                 <div className="flex justify-center items-center w-full mt-5">

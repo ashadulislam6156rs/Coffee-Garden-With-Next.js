@@ -12,7 +12,7 @@ const OurPopulerProducts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/populer/coffees")
+    fetch("https://coffee-garden-server.vercel.app/populer/coffees")
       .then((res) => res.json())
       .then((products) => {
         setCurrProducts(products);

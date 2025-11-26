@@ -15,10 +15,13 @@ const ManageMyProducts = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/user/coffees?email=${user?.email}`)
+      .get(
+        `https://coffee-garden-server.vercel.app/user/coffees?email=${user?.email}`
+      )
       .then((data) => {
         setMyProducts(data.data);
-      }).catch(err => toast.error(err?.message))
+      })
+      .catch((err) => toast.error(err?.message));
   }, [user?.email]);
 
 
@@ -33,7 +36,7 @@ const ManageMyProducts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/coffees/${_id}`, {
+        fetch(`https://coffee-garden-server.vercel.app/coffees/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

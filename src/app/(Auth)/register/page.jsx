@@ -20,10 +20,7 @@ const Register = () => {
   const { userRegister, updateUserInfo, userSignInGoogle, user } =
     useContext(AuthContext);
 
-  // console.log(user);
-
   const handleRegister = (data) => {
-    // console.log(data);
     const photoFile = data.photo[0];
 
     // ** User Register
@@ -63,7 +60,7 @@ const Register = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-2">
+    <div className="max-w-7xl mx-auto p-2 py-5">
       <div className="mt-10 md:w-3/8 mx-auto rounded-box p-4 border">
         <form
           onSubmit={handleSubmit(handleRegister)}

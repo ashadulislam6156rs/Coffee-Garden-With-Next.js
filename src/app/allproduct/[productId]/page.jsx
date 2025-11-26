@@ -8,23 +8,23 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { AuthContext } from "@/Context/AuthContext";
 import ManageMyProducts from "@/app/(Deshboard)/manageproducts/page";
 import PrivateRoute from "@/PrivateRoute/PrivateRoute";
-import { toast } from "react-toastify";
 import ErrorProductNotFound from "@/Componants/Error/ErrorProductNotFound";
+import Loading from "@/Componants/Loading/Loading";
 
 const ProductDetails = ({ params }) => {
   
   const { productId } = React.use(params);
   const [product, setProduct] = useState(null);
 
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/productDetails/${productId}`)
+    fetch(`https://coffee-garden-server.vercel.app/productDetails/${productId}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
       })
-    .catch()
+      .catch();
   });
 
   const {
@@ -43,10 +43,12 @@ const ProductDetails = ({ params }) => {
     userEmail,
   } = product || {};
 
-
-   if (!product || !productId) {
-     return <ErrorProductNotFound></ErrorProductNotFound>;
-   }
+  if (loading) {
+    return <Loading></Loading>
+  }
+    if (!product || !productId) {
+      return <ErrorProductNotFound></ErrorProductNotFound>;
+    }
 
   return (
     <PrivateRoute>
