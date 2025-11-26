@@ -8,9 +8,13 @@ import { toast } from "react-toastify";
 import { FaUserLarge } from "react-icons/fa6";
 import { ImArrowUp2 } from "react-icons/im";
 import { AiTwotoneEye, AiTwotoneEyeInvisible } from "react-icons/ai";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
   const [eye, setEye] = useState(true);
+
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -45,6 +49,7 @@ const Register = () => {
             updateUserInfo(updateInfo);
           });
         toast.success("Your Account has been Successfully Created.");
+        router.push("/");
       })
       .catch((err) => {
         toast.error(err?.message);
@@ -55,6 +60,7 @@ const Register = () => {
     userSignInGoogle()
       .then(() => {
         toast.success("Your Account LogIn Successfull.");
+         router.push("/");
       })
       .catch((err) => toast.error(err?.message));
   };

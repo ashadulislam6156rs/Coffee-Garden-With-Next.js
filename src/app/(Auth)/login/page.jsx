@@ -5,10 +5,12 @@ import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { AiTwotoneEye, AiTwotoneEyeInvisible } from "react-icons/ai";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
   const [eye, setEye] = useState(true);
   const { userLogIn, userSignInGoogle } = useContext(AuthContext);
+  const router = useRouter();
 
   const {
     register,
@@ -20,6 +22,7 @@ const Login = () => {
     userLogIn(data.email, data.password)
       .then(() => {
         toast.success("Your Account LogIn Successful.");
+        router.push("/");
       })
       .catch((err) => toast.error(err?.message));
   };
@@ -28,6 +31,7 @@ const Login = () => {
     userSignInGoogle()
       .then(() => {
         toast.success("Your Account LogIn Successful.");
+        router.push("/");
       })
       .catch((err) => toast.error(err?.message));
   };

@@ -7,7 +7,7 @@ import Deshboard from "./Deshboard";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-
+  
   const { user } = useContext(AuthContext);
 
   // ** Active Path

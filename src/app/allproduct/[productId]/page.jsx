@@ -12,20 +12,23 @@ import ErrorProductNotFound from "@/Componants/Error/ErrorProductNotFound";
 import Loading from "@/Componants/Loading/Loading";
 
 const ProductDetails = ({ params }) => {
-  
   const { productId } = React.use(params);
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const { user, loading } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     fetch(`https://coffee-garden-server.vercel.app/productDetails/${productId}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
+        setLoading(false)
       })
-      .catch();
-  });
+      .catch(() => {
+         setLoading(false);
+      });
+  }, [productId]);
 
   const {
     name,
@@ -44,11 +47,12 @@ const ProductDetails = ({ params }) => {
   } = product || {};
 
   if (loading) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
-    if (!product || !productId) {
-      return <ErrorProductNotFound></ErrorProductNotFound>;
-    }
+
+  if (!product || !productId) {
+    return <ErrorProductNotFound></ErrorProductNotFound>;
+  }
 
   return (
     <PrivateRoute>
