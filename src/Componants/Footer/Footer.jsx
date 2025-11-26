@@ -11,8 +11,18 @@ import {
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot, FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const Footer = () => {
+
+  const { register, handleSubmit, formState:{errors}} = useForm();
+
+  const handleMessageSubmit = () => {
+   toast.success("Your Message Recorted Successful.")
+}
+
+
   return (
     <div className="max-w-7xl mx-auto bg-[#37272719]">
       <footer className="py-16 px-10">
@@ -80,24 +90,37 @@ const Footer = () => {
               Connect with Us
             </h2>
 
-            <form className="space-y-4">
+            <form
+              onSubmit={handleSubmit(handleMessageSubmit)}
+              className="space-y-4"
+            >
               <input
                 type="text"
                 placeholder="Name"
+                {...register("name", { required: true })}
                 className="w-full bg-white border border-gray-200 px-4 py-3 rounded-md focus:outline-none focus:border-[#3c2f2f]"
               />
+              {errors.name?.type === "required" && (
+                <p className="text-red-500">Name is required!</p>
+              )}
 
               <input
                 type="email"
                 placeholder="Email"
+                {...register("email", { required: true })}
                 className="w-full bg-white border border-gray-200 px-4 py-3 rounded-md focus:outline-none focus:border-[#3c2f2f]"
               />
+              {errors.email?.type === "required" && (
+                <p className="text-red-500">Email is required!</p>
+              )}
 
               <textarea
                 rows="5"
                 placeholder="Message"
+                {...register("message")}
                 className="w-full bg-white border border-gray-200 px-4 py-3 rounded-md resize-none focus:outline-none focus:border-[#3c2f2f]"
               ></textarea>
+              
 
               <button
                 type="submit"

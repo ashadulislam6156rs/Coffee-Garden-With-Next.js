@@ -9,7 +9,7 @@ const Product = ({ product }) => {
 
   return (
     <div>
-      <div className="card card-side bg-base-300 p-5 shadow-sm pr-4 md:pr-6 md:p-6 flex flex-col gap-5 justify-between items-center">
+      <div className="card card-side hover:bg-base-200 transition-colors duration-700 hover:scale-97 ease-in-out bg-base-300 p-5 shadow-sm pr-4 md:pr-6 md:p-6 flex flex-col gap-5 justify-between items-center">
         <div className="w-full space-y-5">
           <figure className="w-full h-96 overflow-hidden">
             <img
