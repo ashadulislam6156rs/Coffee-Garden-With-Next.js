@@ -5,7 +5,6 @@ import OurPopulerProducts from "@/Componants/HomeSections/OurPopulerProducts";
 
 import Testimonials from "@/Componants/HomeSections/Testimonials";
 
-
 export default function Home() {
   return (
     <div className="flex min-h-screen max-w-7xl mx-auto bg-zinc-50 font-sans dark:bg-black">

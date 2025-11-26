@@ -3,16 +3,16 @@ import React from 'react';
 const Testimonials = () => {
     return (
       <div>
-        <section className="py-10 bg-gray-100">
+        <section className="py-5 bg-gray-100">
           <div className="container mx-auto px-4">
-            <p className="text-center text-xs pt-5">
+            <p className="text-center text-xs">
               --- Our Customers Testimonials ---
             </p>
-            <h1 className="text-3xl text-[#331A15] font-semibold text-center py-3 mb-4">
+            <h1 className="md:text-3xl text-xl text-[#331A15] font-semibold text-center py-3 mb-4">
               What Our Customers Say
             </h1>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Card 1 */}
               <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
                 <p className="text-gray-600 italic mb-4">

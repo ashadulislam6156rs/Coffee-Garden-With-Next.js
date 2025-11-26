@@ -25,16 +25,14 @@ const BrewProcess = () => {
     ];
     return (
       <div>
-        <section className="py-10 bg-[#faf6f2]">
+        <section className="py-5 bg-[#faf6f2]">
           <div className="container mx-auto px-6">
-            <p className="text-center text-xs pt-5">
-              --- Your Perfect Coffee ---
-            </p>
-            <h1 className="text-3xl text-[#331A15] font-semibold text-center py-3 mb-4">
+            <p className="text-center text-xs ">--- Your Perfect Coffee ---</p>
+            <h1 className="md:text-3xl text-xl text-[#331A15] font-semibold text-center py-3 mb-4">
               How We Brew Your Perfect Coffee
             </h1>
 
-            <div className="grid md:grid-cols-4 gap-5">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
               {steps.map((step, i) => (
                 <div
                   key={i}

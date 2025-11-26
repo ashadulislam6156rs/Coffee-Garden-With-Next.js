@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 
@@ -19,7 +20,9 @@ const Banner = () => {
               beautiful moments and make them memorable.
             </p>
             <div className="flex items-center justify-center md:block">
-              <button className="btn btn-md hover:bg-teal-400 text-[#242222]">Learn More</button>
+              <Link href={"/about"} className="btn btn-md hover:bg-[#d1b48c] text-[#242222]">
+                Learn More
+              </Link>
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 
 import { MdEmail } from "react-icons/md";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaLocationDot, FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 
 const Footer = () => {
@@ -39,10 +39,20 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex gap-4 mt-6 text-xl">
-              <FaFacebookF className="cursor-pointer hover:text-[#3c2f2f]" />
-              <FaTwitter className="cursor-pointer hover:text-[#3c2f2f]" />
-              <FaInstagram className="cursor-pointer hover:text-[#3c2f2f]" />
-              <FaLinkedinIn className="cursor-pointer hover:text-[#3c2f2f]" />
+              <FaFacebookF
+                href="ashadulislam6156rs"
+                className="cursor-pointer hover:text-[#3c2f2f]"
+              />
+
+              <FaXTwitter className="cursor-pointer hover:text-[#3c2f2f]" />
+              <FaInstagram
+                href="https://www.instag.com/ashadulislam6156rs/"
+                className="cursor-pointer hover:text-[#3c2f2f]"
+              />
+              <FaLinkedinIn
+                href={"https://www.linkedin.com/in/ashadulislam6156rs/"}
+                className="cursor-pointer hover:text-[#3c2f2f]"
+              />
             </div>
 
             {/* Contact */}
@@ -52,14 +62,14 @@ const Footer = () => {
 
             <div className="mt-4 space-y-3 text-gray-700">
               <p className="flex items-center gap-3">
-                <FaPhoneAlt className="text-lg" /> +88 01533 333 333
+                <FaPhoneAlt className="text-lg" /> +880 1234 567890
               </p>
               <p className="flex items-center gap-3">
-                <MdEmail className="text-xl" /> info@gmail.com
+                <MdEmail className="text-xl" /> info@coffeegarden.com
               </p>
               <p className="flex items-center gap-3">
-                <FaLocationDot className="text-xl" /> 72, Wall street, King
-                Road, Dhaka
+                <FaLocationDot className="text-xl" /> 123 Coffee Street, Dhaka,
+                Bangladesh
               </p>
             </div>
           </div>

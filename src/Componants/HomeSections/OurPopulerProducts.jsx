@@ -12,19 +12,17 @@ const OurPopulerProducts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(
-      "https://coffee-store-espresso-emporium-server-1yc0.onrender.com/coffees"
-    )
+    fetch("http://localhost:5000/populer/coffees")
       .then((res) => res.json())
       .then((products) => {
         setCurrProducts(products);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((err) => {
         Swal.fire({
           position: "top-center",
           icon: "error",
-          title: `${err.message}`,
+          title: `${err?.message}`,
           showConfirmButton: false,
           timer: 1500,
         });
@@ -57,12 +55,12 @@ const OurPopulerProducts = () => {
               Our Popular Products
             </h1>
             <div className="flex items-center justify-center">
-              <Link href="/" className="bg-[#331A15] btn rounded-md text-white">
+              <Link href="/addproduct" className="bg-[#331A15] btn rounded-md text-white">
                 Add Coffee <GiCoffeeCup />
               </Link>
             </div>
             <div>
-              <div className="grid lg:grid-cols-2 gap-5 mt-10 px-3 md:px-0 md:w-3/4 mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 px-3 md:px-0 md:w-3/4 mx-auto">
                 {currProducts.map((product) => (
                   <Product
                     key={product._id}

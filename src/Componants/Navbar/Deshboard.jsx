@@ -1,6 +1,7 @@
 "use client"
 import { AuthContext } from '@/Context/AuthContext';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 
@@ -16,7 +17,13 @@ const Deshboard = () => {
            setUser(null);
          })
          .then((err) => toast.error(err?.message));
-     };
+  };
+  
+    const pathname = usePathname();
+    const linkClass = (path) =>
+      pathname === path
+        ? "text-[#d1b48c] bg-[#372727]"
+        : "hover:text-[#d1b48c] text-[#0fb88e]";
 
 
 
@@ -27,7 +34,10 @@ const Deshboard = () => {
           role="button"
           className="btn btn-ghost btn-circle avatar"
         >
-          <div title='User Profile' className="w-10 h-10 rounded-full border-2 border-[#fff8ec] flex justify-center items-center">
+          <div
+            title="User Profile"
+            className="w-10 h-10 rounded-full border-2 border-[#fff8ec] flex justify-center items-center"
+          >
             <img
               className="w-9 h-9 rounded-full "
               alt="image"
@@ -40,20 +50,11 @@ const Deshboard = () => {
           id="userNavbar"
           className="menu menu-md mt-5 dropdown-content bg-base-100 rounded-box z-100 w-62 p-2 shadow-md shadow-[#0124445a]"
         >
-          <li className="mb-2 shadow-md cursor-pointer ">
-            <Link
-              href={"/"}
-              className="flex gap-2 items-center bg-slate-100 hover:bg-[#fd7d07] font-semibold hover:text-[#fff8ec] px-2 p-1 text-teal-600 rounded"
-            >
-              {/* <HiOutlineHome className="text-base" /> */}
-              Edite Profile
-            </Link>
-          </li>
 
           <li className="mb-2 shadow-md cursor-pointer ">
             <Link
-              href={"/"}
-              className="flex gap-2 items-center bg-slate-100 hover:bg-[#fd7d07] font-semibold hover:text-[#fff8ec] px-2 p-1 text-teal-600 rounded"
+              href={"/addproduct"}
+              className={`rounded font-semibold ${linkClass("/addproduct")}`}
             >
               {/* <HiOutlineHome className="text-base" /> */}
               Add Product
@@ -61,8 +62,10 @@ const Deshboard = () => {
           </li>
           <li className="mb-2 shadow-md cursor-pointer ">
             <Link
-              href={"/"}
-              className="flex gap-2 items-center bg-slate-100 hover:bg-[#fd7d07] font-semibold hover:text-[#fff8ec] px-2 p-1 text-teal-600 rounded"
+              href={"/manageproducts"}
+              className={`rounded font-semibold ${linkClass(
+                "/manageproducts"
+              )}`}
             >
               {/* <HiOutlineHome className="text-base" /> */}
               Manage Products
