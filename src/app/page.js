@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen max-w-7xl mx-auto bg-zinc-50 font-sans dark:bg-black">
       <main className="">
+        <title>Home | Coffee Garden</title>
         <Banner></Banner>
         <OurPopulerProducts></OurPopulerProducts>
         <BrewProcess></BrewProcess>

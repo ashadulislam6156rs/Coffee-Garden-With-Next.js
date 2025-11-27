@@ -38,6 +38,7 @@ const Login = () => {
 
   return (
     <div className="max-w-7xl mx-auto p-2 py-5">
+      <title>LogIn | Coffee Garden</title>
       <div className="mt-10 md:w-3/8 mx-auto rounded-box p-4 border">
         <form onSubmit={handleSubmit(handleLogIn)} className="space-y-4">
           <h1 className="text-4xl font-bold">Welcome Back</h1>

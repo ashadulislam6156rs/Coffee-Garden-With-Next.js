@@ -94,5 +94,21 @@
     "userEmail": "grace.miller@example.com",
     "userPhoto": "https://i.pinimg.com/736x/4a/b2/af/4ab2af26e00092ca45805920666d5a3e.jpg",
     "description": "Decaf espresso with a touch of cocoa and milk for chocolate lovers."
+  },
+  {
+    "name": "fluffy vanilla cake.",
+    "image": "https://i.pinimg.com/1200x/ae/80/26/ae8026473870d2202838a03cbb23cb32.jpg",
+    "chef": "Mr. Moruti",
+    "supplier": "Foam & Brew",
+    "taste": "Creamy and topped",
+    "category": "Cappuccino",
+    "details": "Espresso with steamed milk foam",
+    "price": 200,
+    "rating": 4.5,
+    "available": true,
+    "userName": "Aiden Cooper",
+    "userEmail": "ashadulislam6156rs@gmail.com",
+    "userPhoto": "https://i.pinimg.com/736x/7e/46/c6/7e46c6d2798eff446b365c5246f4c9ca.jpg",
+    "description": "A perfect balance of espresso, steamed milk, and creamy foam. Creamy latte art on a wooden table, topped with a fluffy vanilla cake."
   }
 ]

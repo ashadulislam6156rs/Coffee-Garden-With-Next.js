@@ -3,6 +3,7 @@ import React from "react";
 const page = () => {
   return (
     <div>
+      <title>Contact | Coffee Garden</title>
       <div className="bg-gray-50 py-16">
         <div className="max-w-6xl mx-auto px-6 md:px-0">
           {/* Page Heading */}
@@ -54,8 +55,8 @@ const page = () => {
                 <div className="space-y-6">
                   <div className="border-l-4 border-amber-500 pl-4">
                     <p className="text-gray-700 italic">
-                      "CoffeeGarden has the most aromatic coffee I’ve ever
-                      tasted! The ambiance makes every visit special."
+                      CoffeeGarden has the most aromatic coffee I’ve ever
+                      tasted! The ambiance makes every visit special.
                     </p>
                     <p className="text-gray-900 font-semibold mt-2">
                       — Rafiq Ahmed
@@ -64,8 +65,8 @@ const page = () => {
 
                   <div className="border-l-4 border-amber-500 pl-4">
                     <p className="text-gray-700 italic">
-                      "Amazing coffee and friendly staff. I always leave with a
-                      smile and a perfectly brewed cup."
+                      Amazing coffee and friendly staff. I always leave with a
+                      smile and a perfectly brewed cup.
                     </p>
                     <p className="text-gray-900 font-semibold mt-2">
                       — Nusrat Jahan
@@ -74,8 +75,8 @@ const page = () => {
 
                   <div className="border-l-4 border-amber-500 pl-4">
                     <p className="text-gray-700 italic">
-                      "The quality of their beans and unique flavors make
-                      CoffeeGarden my go-to coffee spot."
+                      The quality of their beans and unique flavors make
+                      CoffeeGarden my go-to coffee spot.
                     </p>
                     <p className="text-gray-900 font-semibold mt-2">
                       — Tanvir Hossain

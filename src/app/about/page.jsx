@@ -3,6 +3,7 @@ import React from "react";
 const page = () => {
   return (
     <div className="bg-gray-50 py-16">
+      <title>About | Coffee Garden</title>
       <div className="max-w-5xl mx-auto px-6 md:px-0">
         <h1 className="text-5xl font-extrabold text-center text-gray-900 mb-8">
           About Us
@@ -17,7 +18,7 @@ const page = () => {
             <span className="text-amber-500 font-medium">
               warmth, comfort, and authentic flavors
             </span>{" "}
-            to every coffee lover's day.
+            to every coffee lover&apos;s day.
           </p>
 
           <p className="transition-transform transform hover:translate-x-1 duration-300">

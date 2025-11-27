@@ -36,6 +36,7 @@ const AllProducts = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-5">
+      <title>All Products | Coffee Garden</title>
       <div className="py-10">
         <h1 className="text-3xl font-semibold pb-5 text-center">
           All Products: ({products.length})

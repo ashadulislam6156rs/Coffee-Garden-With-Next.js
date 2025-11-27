@@ -68,6 +68,7 @@ const ManageMyProducts = () => {
     <div>
       <PrivateRoute>
         <div className="max-w-7xl mx-auto px-5">
+          <title>Manage My Products | Coffee Garden</title>
           <div className="py-10">
             <h1 className="text-3xl font-semibold pb-5 text-center">
               Manage My Products: ({myProducts.length})
@@ -101,7 +102,7 @@ const ManageMyProducts = () => {
                             <div>
                               <div className="font-bold">{product.name}</div>
                               <div className="text-sm opacity-50">
-                                {product.price}$
+                                ৳ {product.price}
                               </div>
                             </div>
                           </div>

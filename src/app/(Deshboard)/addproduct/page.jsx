@@ -52,6 +52,7 @@ const AddProduct = () => {
   return (
     <PrivateRoute>
       <div>
+        <title>Add Product | Coffee Garden</title>
         <div className="md:w-5/6 p-3 md:p-0 mx-auto m-10">
           <div>
             <Link href={"/"} className="bg-[#331A15] btn rounded-md text-white">

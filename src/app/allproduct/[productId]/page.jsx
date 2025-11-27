@@ -57,6 +57,7 @@ const ProductDetails = ({ params }) => {
   return (
     <PrivateRoute>
       <div className="max-w-7xl mx-auto">
+        <title>Product Details | Coffee Garden</title>
         <div className="md:w-3/4 p-3 md:p-0 mx-auto m-10">
           <div>
             <div>
@@ -73,7 +74,7 @@ const ProductDetails = ({ params }) => {
               <div className="flex flex-col md:flex-row items-center p-5 md:p-0 md:gap-20">
                 <figure className=" w-full md:flex-1 rounded-lg">
                   <img
-                    className="md:w-96 w-full rounded-lg"
+                    className="md:w-96 lg:h-[500px] w-full rounded-lg"
                     src={image}
                     alt="This is Product image"
                   />
@@ -130,7 +131,7 @@ const ProductDetails = ({ params }) => {
                   </h1>
                 </div>
               </div>
-              <div className="flex gap-4 items-center">
+              <div className="flex gap-4 mt-5 items-center">
                 <div>
                   <img
                     className="w-24 h-24 rounded-full"

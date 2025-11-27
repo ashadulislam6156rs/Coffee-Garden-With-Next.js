@@ -6,7 +6,7 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 const ErrorProductNotFound = () => {
   return (
     <>
-      <title>Error Coffee Not Found</title>
+      <title>Error Coffee Not Found | Coffee Garden</title>
       <div className="flex justify-center items-center py-10 pb-20 px-3">
         <div className=" w-full h-full flex justify-between items-center flex-col gap-5">
           <img className="w-50 pt-10" src="/assets/404/App-Error.png" alt="image" />
