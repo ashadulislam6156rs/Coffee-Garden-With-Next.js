@@ -9,16 +9,18 @@ const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const router = useRouter();
 
-  if (loading) {
-    return <Loading></Loading>;
-  }
+  
 
     useEffect(() => {
      if (!user) {
        router.push("/login");
      }
    
-      }, [user, router]);
+    }, [user, router]);
+  
+  if (loading) {
+    return <Loading></Loading>;
+  }
 
 
   if (!user) {

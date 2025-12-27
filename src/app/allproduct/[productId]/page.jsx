@@ -10,6 +10,8 @@ import ManageMyProducts from "@/app/(Deshboard)/manageproducts/page";
 import PrivateRoute from "@/PrivateRoute/PrivateRoute";
 import ErrorProductNotFound from "@/Componants/Error/ErrorProductNotFound";
 import Loading from "@/Componants/Loading/Loading";
+import { CiBookmarkPlus } from "react-icons/ci";
+import Swal from "sweetalert2";
 
 const ProductDetails = ({ params }) => {
   const { productId } = React.use(params);
@@ -46,6 +48,48 @@ const ProductDetails = ({ params }) => {
     userEmail,
   } = product || {};
 
+
+
+  const handleBookMarks = () => {
+    
+    const newCoffeeBookMark = {
+      name: product?.name,
+      available: product?.available,
+      image: product?.image,
+      price: product?.price,
+      category: product?.category,
+      userName: user?.displayName,
+      userPhoto: user?.photoURL,
+      userEmail: user?.email,
+      productId: productId,
+    };
+
+      fetch(`https://coffee-garden-server.vercel.app/coffees/book-mark`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(newCoffeeBookMark),
+      })
+        .then((res) => res.json())
+        .then(() => {
+          Swal.fire({
+            icon: "success",
+            title: "Your Product has been Book Mark.",
+            showConfirmButton: false,
+            timer: 1000,
+          });
+        })
+        .catch((err) => {
+          Swal.fire({
+            icon: "error",
+            title: `${err?.message}`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        });
+    };
+
   if (loading) {
     return <Loading></Loading>;
   }
@@ -53,6 +97,8 @@ const ProductDetails = ({ params }) => {
   if (!product || !productId) {
     return <ErrorProductNotFound></ErrorProductNotFound>;
   }
+
+
 
   return (
     <PrivateRoute>
@@ -129,6 +175,12 @@ const ProductDetails = ({ params }) => {
                       {details}
                     </span>
                   </h1>
+
+                  <button onClick={handleBookMarks} className="btn my-2 bg-[#372727] text-white">
+                    {" "}
+                    <CiBookmarkPlus />
+                    Add BookMark
+                  </button>
                 </div>
               </div>
               <div className="flex gap-4 mt-5 items-center">

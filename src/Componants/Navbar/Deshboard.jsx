@@ -66,6 +66,15 @@ const Deshboard = () => {
             Manage Products
           </Link>
         </li>
+        <li className="mb-2 shadow-md cursor-pointer ">
+          <Link
+            href={"/my-bookmarks"}
+            className={`rounded font-semibold ${linkClass("/my-bookmarks")}`}
+          >
+            {/* <HiOutlineHome className="text-base" /> */}
+            View bookmarks
+          </Link>
+        </li>
         <li>
           <button
             className="bg-linear-to-r text-white hover:bg-linear-to-l from-[#012444] via-[#1b2f5b] to-[#fd7e07] py-1.5 font-semibold"
