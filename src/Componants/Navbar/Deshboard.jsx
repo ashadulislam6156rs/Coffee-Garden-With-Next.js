@@ -66,7 +66,7 @@ const Deshboard = () => {
             Manage Products
           </Link>
         </li>
-        <li className="mb-2 shadow-md cursor-pointer ">
+        <li className="mb-2 shadow-md cursor-pointer">
           <Link
             href={"/my-bookmarks"}
             className={`rounded font-semibold ${linkClass("/my-bookmarks")}`}
